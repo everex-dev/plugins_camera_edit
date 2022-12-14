@@ -284,11 +284,11 @@ NSString *const errorMethod = @"error";
   } else if (deviceOrientation == UIDeviceOrientationLandscapeLeft) {
     // Note: device orientation is flipped compared to video orientation. When UIDeviceOrientation
     // is landscape left the video orientation should be landscape right.
-    return AVCaptureVideoOrientationLandscapeRight;
+    return AVCaptureVideoOrientationLandscapeLeft;
   } else if (deviceOrientation == UIDeviceOrientationLandscapeRight) {
     // Note: device orientation is flipped compared to video orientation. When UIDeviceOrientation
     // is landscape right the video orientation should be landscape left.
-    return AVCaptureVideoOrientationLandscapeLeft;
+    return AVCaptureVideoOrientationLandscapeRight;
   } else if (deviceOrientation == UIDeviceOrientationPortraitUpsideDown) {
     return AVCaptureVideoOrientationPortraitUpsideDown;
   } else {
