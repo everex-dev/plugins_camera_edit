@@ -9,6 +9,7 @@ import 'package:camera/camera.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_tflite/flutter_tflite.dart';
 import 'package:video_player/video_player.dart';
 
 /// Camera example home widget.
@@ -98,6 +99,19 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
       parent: _focusModeControlRowAnimationController,
       curve: Curves.easeInCubic,
     );
+
+    Tflite.loadModel(
+      model: 'assets/model_optimized.tflite',
+    ).then((value) {
+      if (value == null) {
+        throw Exception('return value is nothing');
+      }
+
+      if (value.toLowerCase() == 'success') {
+      } else {
+        throw Exception('value is false!');
+      }
+    });
   }
 
   @override
@@ -105,6 +119,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
     WidgetsBinding.instance.removeObserver(this);
     _flashModeControlRowAnimationController.dispose();
     _exposureModeControlRowAnimationController.dispose();
+    Tflite.close();
     super.dispose();
   }
 
@@ -124,6 +139,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
       onNewCameraSelected(cameraController.description);
     }
   }
+
   // #enddocregion AppLifecycle
 
   @override
@@ -667,6 +683,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
 
     try {
       await cameraController.initialize();
+      await cameraController.startImageStream((CameraImage image) {});
       await Future.wait(<Future<Object?>>[
         // The exposure mode is currently not supported on the web.
         ...!kIsWeb

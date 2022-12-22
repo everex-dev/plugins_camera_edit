@@ -807,6 +807,7 @@ class CameraController extends ValueNotifier<CameraValue> {
       return;
     }
     _unawaited(_deviceOrientationSubscription?.cancel());
+    _unawaited(_imageStreamSubscription?.cancel());
     _isDisposed = true;
     super.dispose();
     if (_initCalled != null) {
