@@ -16,6 +16,7 @@ dependencies:
     path: ../
   flutter:
     sdk: flutter
+  flutter_tflite: ^1.0.1
   path_provider: ^2.0.0
   video_player: ^2.1.4
 
@@ -30,3 +31,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/model_optimized.tflite
