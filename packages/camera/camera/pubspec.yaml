@@ -21,13 +21,21 @@ flutter:
 
 dependencies:
   camera_android:
-    path: ../camera_android
+    git: https://github.com/TeamEverExDev/plugins_camera_edit.git
+    ref: dev
+    path: packages/camera/camera_android
   camera_avfoundation:
-    path: ../camera_avfoundation
+    git: https://github.com/TeamEverExDev/plugins_camera_edit.git
+    ref: dev
+    path: packages/camera/camera_avfoundation
   camera_platform_interface:
-    path: ../camera_platform_interface
+    git: https://github.com/TeamEverExDev/plugins_camera_edit.git
+    ref: dev
+    path: packages/camera/camera_platform_interface
   camera_web:
-    path: ../camera_web
+    git: https://github.com/TeamEverExDev/plugins_camera_edit.git
+    ref: dev
+    path: packages/camera/camera_web
   flutter:
     sdk: flutter
   flutter_plugin_android_lifecycle: ^2.0.2

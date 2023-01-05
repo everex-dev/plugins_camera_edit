@@ -163,7 +163,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
             child: Row(
               children: <Widget>[
                 _cameraTogglesRowWidget(),
-                _thumbnailWidget(),
+                // _thumbnailWidget(),
               ],
             ),
           ),
@@ -599,7 +599,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
       for (final CameraDescription cameraDescription in _cameras) {
         toggles.add(
           SizedBox(
-            width: 90.0,
+            width: 80.0,
             child: RadioListTile<CameraDescription>(
               title: Icon(getCameraLensIcon(cameraDescription.lensDirection)),
               groupValue: controller?.description,
@@ -1048,6 +1048,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
     }
 
     try {
+      //cameraController.startImageStream((image) => null);
       final XFile file = await cameraController.takePicture();
       return file;
     } on CameraException catch (e) {
