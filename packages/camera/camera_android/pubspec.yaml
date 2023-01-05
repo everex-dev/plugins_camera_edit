@@ -19,7 +19,10 @@ flutter:
 
 dependencies:
   camera_platform_interface:
-    path: ../camera_platform_interface
+    git:
+      url: https://github.com/TeamEverExDev/plugins_camera_edit.git
+      ref: dev
+      path: packages/camera/camera_platform_interface
   flutter:
     sdk: flutter
   flutter_plugin_android_lifecycle: ^2.0.2
