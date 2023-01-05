@@ -35,11 +35,11 @@ dependencies:
       url: https://github.com/TeamEverExDev/plugins_camera_edit.git
       ref: dev
       path: packages/camera/camera_platform_interface
-  camera_web:
-    git:
-      url: https://github.com/TeamEverExDev/plugins_camera_edit.git
-      ref: dev
-      path: packages/camera/camera_web
+#  camera_web:
+#    git:
+#      url: https://github.com/TeamEverExDev/plugins_camera_edit.git
+#      ref: dev
+#      path: packages/camera/camera_web
   flutter:
     sdk: flutter
   flutter_plugin_android_lifecycle: ^2.0.2
